@@ -32,3 +32,9 @@
 app-pokemon-pictures {
   margin-left: 100px;
 }
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

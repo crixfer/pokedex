@@ -1,10 +1,23 @@
 #container {
+  position: relative;
   display: flex;
   align-items: center;
+  isolation: isolate;
+  &.selected::before {
+    content: "";
+    width: calc(100% + 8px);
+    height: 120%;
+    left: 0;
+    position: absolute;
+    background-color: #da4443;
+    z-index: -1;
+    border-radius: 5px;
+  }
 }
 
 #flecha {
   height: 20px;
+  padding-left: 20px;
 }
 
 .card {
