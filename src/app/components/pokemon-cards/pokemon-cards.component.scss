@@ -1,0 +1,30 @@
+#container {
+  display: flex;
+  align-items: center;
+}
+
+#flecha {
+  height: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #fceab8;
+  border-radius: 25px 5px 5px 25px;
+  width: 100%;
+  font-size: larger;
+  padding-left: 5px;
+  gap: 1rem;
+}
+
+.circle {
+  border-radius: 50%;
+  height: 25px;
+  aspect-ratio: 1;
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.picture {
+  height: 30px;
+}
