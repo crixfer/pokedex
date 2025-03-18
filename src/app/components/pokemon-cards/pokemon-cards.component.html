@@ -4,10 +4,13 @@
     <div class="circle"></div>
     <img
       class="picture"
-      src="./../../../assets/images/Charmander-PNG-Photos.png"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+        id
+      }}.png"
       alt=""
     />
-    <span>No. 001</span>
-    <span>Charmander</span>
+    <span>No. {{ id }}</span>
+    <!-- titlecase let us assign a Capital letter to each word -->
+    <span *ngIf="data"> {{ data.name | titlecase }}</span>
   </div>
 </div>

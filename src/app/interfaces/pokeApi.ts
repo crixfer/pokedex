@@ -2,7 +2,7 @@ export interface Data {
   count: number;
   next: string;
   previous: string;
-  results: Result;
+  results: Result[];
 }
 
 export interface Result {
