@@ -1,9 +1,11 @@
 <main id="container">
-  <app-pokemon-pictures></app-pokemon-pictures>
+  <app-pokemon-pictures [pokemon]="chosenPokemon"> </app-pokemon-pictures>
   <div class="cardsContainer" #cards (scroll)="onScroll($event)">
     <app-pokemon-cards
       *ngFor="let pokemon of pokemonList"
       [data]="pokemon"
+      [chosen]="pokemon.name === chosenPokemon?.name"
+      (clicked)="clickedCard($event)"
     ></app-pokemon-cards>
     <img
       src="../../../assets/images/spinner.svg"

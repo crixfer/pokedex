@@ -1,6 +1,11 @@
-<div id="container">
-  <img src="../../../assets/images/flecha.png" alt="flecha" id="flecha" />
-  <div class="card">
+<div id="container" [ngClass]="{ chosen: chosen }">
+  <img
+    src="../../../assets/images/flecha.png"
+    alt="flecha"
+    id="flecha"
+    *ngIf="chosen"
+  />
+  <div id="card" class="card" (click)="clicked.emit(id)">
     <div class="circle"></div>
     <img
       class="picture"

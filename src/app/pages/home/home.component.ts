@@ -10,6 +10,7 @@ import { PokemonCardsComponent } from '../../components/pokemon-cards/pokemon-ca
 import { PokemonService } from '../../service/pokemon.service';
 import { Result } from '../../interfaces/pokeApi';
 import { CommonModule } from '@angular/common';
+import { Pokemon } from '../../interfaces/pokeInterface';
 
 @Component({
   selector: 'app-home',
@@ -29,8 +30,11 @@ export class HomeComponent implements OnInit {
 
   debouncerTimer: any;
 
+  chosenPokemon?: Pokemon;
+
   ngOnInit(): void {
     this.loadList();
+    this.pokemonService.getById('1');
   }
 
   async loadList() {
@@ -61,5 +65,9 @@ export class HomeComponent implements OnInit {
         }
       });
     }, 300);
+  }
+
+  async clickedCard(id: string) {
+    this.chosenPokemon = await this.pokemonService.getById(id);
   }
 }
