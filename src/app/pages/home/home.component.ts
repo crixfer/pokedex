@@ -11,10 +11,16 @@ import { PokemonService } from '../../service/pokemon.service';
 import { Result } from '../../interfaces/pokeApi';
 import { CommonModule } from '@angular/common';
 import { Pokemon } from '../../interfaces/pokeInterface';
+import { PokemonDetailsComponent } from '../../components/pokemon-details/pokemon-details.component';
 
 @Component({
   selector: 'app-home',
-  imports: [PokemonPicturesComponent, PokemonCardsComponent, CommonModule],
+  imports: [
+    PokemonPicturesComponent,
+    PokemonCardsComponent,
+    PokemonDetailsComponent,
+    CommonModule,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

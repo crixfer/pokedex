@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Result } from '../interfaces/pokeApi';
-import id from '@angular/common/locales/id';
 import { Pokemon } from '../interfaces/pokeInterface';
 
 @Injectable({
@@ -25,5 +24,14 @@ export class PokemonService {
     return await result.json();
   }
 
-  getDescription() {}
+  async getDescription(id: string | number): Promise<string> {
+    const result = await fetch(
+      `https://pokeapi.co/api/v2/pokemon-species/${id}`
+    );
+    const resJson = await result.json();
+    const texto = resJson.flavor_text_entries.find(
+      (texto: any) => texto.language.name === 'es'
+    );
+    return texto.flavor_text;
+  }
 }

@@ -1,4 +1,5 @@
 <main id="container">
+  <app-pokemon-details [pokemon]="chosenPokemon"></app-pokemon-details>
   <app-pokemon-pictures [pokemon]="chosenPokemon"> </app-pokemon-pictures>
   <div class="cardsContainer" #cards (scroll)="onScroll($event)">
     <app-pokemon-cards

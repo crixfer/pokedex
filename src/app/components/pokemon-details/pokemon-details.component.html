@@ -1,1 +1,20 @@
-<p>pokemon-details works!</p>
+<!-- DETAILS HTML -->
+
+<div class="container">
+  <div class="area"><app-pokemon-cards> </app-pokemon-cards></div>
+  <div class="area">
+    <p>
+      <span class="label">type</span>
+      <span class="type" *ngFor="let typ of pokemon?.types">{{
+        typ.type.name
+      }}</span>
+    </p>
+    <p><span class="label">Height</span>{{ pokemon?.height }}</p>
+    <p><span class="label">Weight</span>{{ pokemon?.weight }}</p>
+  </div>
+  <div class="area">
+    <div class="detailContainer">
+      <p>{{ description }}</p>
+    </div>
+  </div>
+</div>
